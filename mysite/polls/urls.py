@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("saveq/", views.add_question, name="saveq"),
-    path("getq/", views.get_question, name="saveq"),
-    path("articles/<int:year>/<int:month>/", views.month_archive),
+    path("<int:question_id>/", views.detail, name="detail"),
+    path("<int:question_id>/results/", views.results, name="results"),
+    path("<int:question_id>/vote/", views.vote, name="vote"),
 ]
